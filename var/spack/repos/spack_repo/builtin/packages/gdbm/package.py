@@ -53,4 +53,4 @@ class Gdbm(AutotoolsPackage, GNUMirrorPackage):
         #   https://patchwork.ozlabs.org/patch/771300/
         #   https://stackoverflow.com/questions/5582211
         #   https://www.gnu.org/software/automake/manual/html_node/Flag-Variables-Ordering.html
-        return ["--enable-libgdbm-compat", "CPPFLAGS=-D_GNU_SOURCE"]
+        return ["--enable-libgdbm-compat", "CPPFLAGS=-D_GNU_SOURCE", "CFLAGS=-std=gnu17"]

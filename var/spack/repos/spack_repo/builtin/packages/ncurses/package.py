@@ -110,6 +110,7 @@ class Ncurses(AutotoolsPackage, GNUMirrorPackage):
     def flag_handler(self, name, flags):
         if name == "cflags":
             flags.append(self["c"].pic_flag)
+            flags.append("-std=gnu17")
         elif name == "cxxflags":
             flags.append(self["cxx"].pic_flag)
 

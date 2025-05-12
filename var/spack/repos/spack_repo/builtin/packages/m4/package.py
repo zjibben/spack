@@ -88,6 +88,8 @@ class M4(AutotoolsPackage, GNUMirrorPackage):
         env.set("M4", self.prefix.bin.m4)
 
     def setup_build_environment(self, env: EnvironmentModifications) -> None:
+        env.append_flags("CFLAGS", "-std=gnu17")
+
         # The default optimization level for icx/icpx is "-O2",
         # but building m4 with this level breaks the build of dependents.
         # So we set it explicitely to "-O0".

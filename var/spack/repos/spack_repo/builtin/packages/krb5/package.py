@@ -115,7 +115,7 @@ class Krb5(AutotoolsPackage):
 
         # https://github.com/spack/spack/issues/34193
         if spec.satisfies("%gcc@10:"):
-            args.append("CFLAGS=-fcommon")
+            args.append("CFLAGS=-fcommon -std=gnu17")
 
         if spec["openssl"].satisfies("~shared"):
             pkgconf = which("pkg-config")

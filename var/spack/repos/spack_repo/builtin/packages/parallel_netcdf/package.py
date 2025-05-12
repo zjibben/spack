@@ -125,6 +125,8 @@ class ParallelNetcdf(AutotoolsPackage):
 
         flags = {"CFLAGS": [], "CXXFLAGS": [], "FFLAGS": [], "FCFLAGS": []}
 
+        flags["CFLAGS"].append("-std=gnu17")
+
         if self.spec.satisfies("+pic"):
             flags["CFLAGS"].append(self.compiler.cc_pic_flag)
             flags["CXXFLAGS"].append(self.compiler.cxx_pic_flag)

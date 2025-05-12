@@ -103,6 +103,8 @@ class BerkeleyDb(AutotoolsPackage):
         config_args += self.enable_or_disable("cxx")
         config_args += self.enable_or_disable("stl")
 
+        config_args.append("CFLAGS=-std=gnu17")
+
         # The default glibc provided by CentOS 7 and Red Hat 8 does not provide
         # proper atomic support when using the NVIDIA compilers
         if spec.satisfies("%nvhpc") and (
